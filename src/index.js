@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import Header from './components/Header/Header.js';
+import Chart from './components/Chart/Chart.js'
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Header />
+    <Chart />
   </React.StrictMode>,
   document.getElementById('root')
 );
