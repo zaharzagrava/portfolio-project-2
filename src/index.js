@@ -6,11 +6,13 @@ import * as serviceWorker from './serviceWorker';
 
 import Header from './components/Header/Header.js';
 import Chart from './components/Chart/Chart.js'
+import YoutubeForm from './components/YoutubeForm/YoutubeForm';
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
     <Chart />
+    <YoutubeForm />
   </React.StrictMode>,
   document.getElementById('root')
 );
