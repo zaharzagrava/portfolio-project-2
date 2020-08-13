@@ -9,9 +9,14 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/system": "^4.9.14",
     "fontsource-roboto": "^3.0.3",
+    "formik": "^2.1.5",
     "next": "9.5.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "sass": "^1.26.10",
+    "yup": "^0.29.3"
   }
 }

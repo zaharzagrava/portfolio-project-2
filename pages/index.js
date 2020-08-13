@@ -1,5 +1,9 @@
 import Head from 'next/head'
 import { Button } from '@material-ui/core'
+import { spacing } from '@material-ui/system';
+import { StylesProvider } from '@material-ui/core/styles';
+
+import Register from '../components/Register/Register.js'
 
 export default function Home() {
   return (
@@ -10,9 +14,9 @@ export default function Home() {
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
       </Head>
 
-      <Button variant="contained" color="primary">
-        This is my first Material-UI Button
-      </Button>
+      <StylesProvider injectFirst >
+        <Register />
+      </StylesProvider>
 
     </div>
   )
