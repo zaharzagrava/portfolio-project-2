@@ -1,11 +1,9 @@
 import Head from 'next/head'
-import { Button } from '@material-ui/core'
-import { spacing } from '@material-ui/system';
-import { StylesProvider } from '@material-ui/core/styles';
-
-import Register from '../components/Register/Register.js'
+import Profile from '../components/Profile/Profile'
+import Admin from '../components/Admin/Admin'
 
 export default function Home() {
+
   return (
     <div>
       <Head>
@@ -13,11 +11,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
       </Head>
+      <h1>Test</h1>
 
-      <StylesProvider injectFirst >
-        <Register />
-      </StylesProvider>
+      <Admin />
+      {/* <Profile /> */}
 
     </div>
   )
 }
+
