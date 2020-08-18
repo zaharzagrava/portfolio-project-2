@@ -2,9 +2,9 @@ import React from 'react'
 
 import styles from './Image.module.scss'
 
-function Image(props) {
+function Image({src, height, width}) {
   return (
-    <img src={props.src} height={props.height} width={props.width} className={styles.image}/>
+    <img src={src} height={height} width={width}/>
   )
 }
 

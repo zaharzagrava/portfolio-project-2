@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Profile from '../components/Profile/Profile'
 import Admin from '../components/Admin/Admin'
 
-export default function Home() {
+export default function index() {
 
   return (
     <div>
@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <h1>Test</h1>
 
-      <Admin />
+      {/* <Admin /> */}
       {/* <Profile /> */}
 
     </div>

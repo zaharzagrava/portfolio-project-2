@@ -12,8 +12,17 @@ const InitialState = {
 
 // Reducer
 export default function ClientReducer(state = InitialState, action) {
+
   switch (action.type) {
     case ClientActionTypes.CLIENT_LOADED:
+      console.log("INSIDE")
+      console.log({
+        byIds: {
+          ...state.byIds,
+          [action.payload.id]: action.payload
+        },
+        allIds: [...state.allIds, action.payload.id]
+      })
       return {
         byIds: {
           ...state.byIds,

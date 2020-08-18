@@ -17,4 +17,4 @@ const WithSSRReducer = (state, action) => {
 
 const makeStore = context => createStore(WithSSRReducer);
 
-export const wrapper = createWrapper(makeStore, {debug: true});
+export const wrapper = createWrapper(makeStore, {debug: false});

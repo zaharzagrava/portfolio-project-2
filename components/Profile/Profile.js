@@ -1,41 +1,49 @@
-// import React from 'react'
-
-// import { useSelector } from 'react-redux'
-
-// function Profile({ userId }) {
-//   const userFullName = useSelector(state => state.user.byIds[userId].fullName)
-//   const userJobTitle = useSelector(state => state.user.byIds[userId].jobTitle)
-
-//   return (
-//     <div>
-//       <h1>{userFullName}</h1>
-//       <h1>{userJobTitle}</h1>
-//     </div>
-//   )
-// }
-
-// export default Profile
-
 import React, { useState, useEffect } from 'react';
 
-function Profile() {
-  console.log("--- Profile is called ---")
-  const [count, setCount] = useState(0);
+import {Button, Typography, Card, CardActions, CardContent} from '@material-ui/core'
 
-  // Similar to componentDidMount and componentDidUpdate:
-  useEffect(() => {
-    // Update the document title using the browser API
-    console.log("useEffect")
-    document.title = `You clicked ${count} times`;
-  });
+import Image from "../Image/Image";
+import InfoCard from "../InfoCard/InfoCard";
 
-  console.log("--- Profile is about to return a value ---")
+import styles from './Profile.module.scss'
+
+function Profile({ client }) {
+
   return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => { console.log("setCount"); setCount(count + 1); }}>
-        Click me
-      </button>
+    <div className={styles.profile}>
+      <Card className={styles.profile_card}>
+        <CardContent className={styles.profile_card_content} >
+          <Typography variant="h5" component="h1" gutterBottom >
+            Profile Details
+          </Typography>
+          <Image src={client.avatarImage.url} width={"128px"} height={"128px"}/>
+          <Typography variant="body1" gutterBottom>
+            Full Name: {client.fullName}
+            <br />
+            Job Title: {client.jobTitle}
+          </Typography>
+        </CardContent>
+      </Card>
+      <Card className={styles.profile_card}>
+        <CardContent>
+          <Typography variant="h5" component="h1" gutterBottom >
+            About
+          </Typography>
+          <Typography variant="body1" component="p">
+            Lives at: {client.residence}
+            <br />
+            Works at: {client.company}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button variant="contained" size="small" color="primary">
+            Follow
+          </Button>
+          <Button variant="contained" size="small" color="secondary">
+            Message
+          </Button>
+        </CardActions>
+      </Card>
     </div>
   );
 }
