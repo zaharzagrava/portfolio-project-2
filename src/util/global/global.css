@@ -3,6 +3,10 @@
   src: url("/fonts/Roboto")
 } */
 
+body {
+  margin: 0px;
+}
+
 @font-face {
   font-family: Delicious;
   src: url("/fonts/Delicious-Roman.otf")
