@@ -1,0 +1,15 @@
+.profile {
+  display: grid;
+  place-items: center center;
+  margin: 30px;
+}
+
+.profile_card {
+  min-width: 400px;
+  max-width: 600px;
+  margin: 20px;
+}
+
+.profile_card_content {
+  text-align: center;
+}
