@@ -4,7 +4,7 @@ import {Button, Typography, Card, CardActions, CardContent} from '@material-ui/c
 
 import Image from "../Image/Image";
 
-import styles from './Profile.module.scss'
+import styles from './ClientMainCard.module.scss'
 
 function Profile({ client }) {
 

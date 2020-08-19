@@ -5,10 +5,12 @@ import { useQuery, gql } from '@apollo/client';
 import styles from './Admin.module.scss'
 
 import { ClientActionCreators } from '../../redux/client'
-import Profile from '../Profile/Profile';
+import ClientMainCard from '../ClientMainCard/ClientMainCard';
 import ContentSkeleton from '../ContentSkeleton/ContentSkeleton';
 
-const GET_CLIENTS = gql`
+import { Typography } from '@material-ui/core'
+
+export const GET_CLIENTS = gql`
   {
     clients {
       fullName
@@ -24,6 +26,8 @@ const GET_CLIENTS = gql`
 `;
 
 function Admin() {
+
+
   const [isDataLoading, setIsDataLoading] = useState(true)
   const dispatch = useDispatch()
 
@@ -43,7 +47,12 @@ function Admin() {
 
   return (
     <div>
-      <Profile client={client} />
+      <Typography variant="body1" gutterBottom>
+        Full Name: {client.fullName}
+        <br />
+        Job Title: {client.jobTitle}
+      </Typography>
+      {/* <ClientMainCard client={client} /> */}
     </div>
   )
 

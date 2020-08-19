@@ -14,7 +14,6 @@ function RegisterForm() {
       <div style={{marginTop: '32px'}}>
         <Typography variant="h5" component="h1" gutterBottom className={styles.create_your_acc_h1}>
           Create your account
-          h2 Heading
         </Typography>
       </div>
       <div style={{marginTop: '24px'}}>
