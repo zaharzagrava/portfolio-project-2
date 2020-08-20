@@ -7,10 +7,26 @@ import { Card } from '@material-ui/core';
 export default {
   title: 'Components/ClientContacts',
   component: ClientContacts,
-  excludeStories: /.*Data$/
+  excludeStories: /.*Data$/,
+  decorators: [Story => <Card>{(Story())}</Card>],
+  argTypes: {
+    Label: {
+      control: 'text',
+      description: 'Some Description'
+    },
+    onLogin: {
+      description: 'Some Description'
+    } 
+  },
+  parameters: {
+    actions: {
+      argTypesRegex: '^on.*'
+    }
+  }
 };
 
-const Template = (args) => <Card>  <ClientContacts {...args} /> </Card>;
+const Template = (args) =>  <ClientContacts {...args} />;
+
 export const Simple = Template.bind({});
 export const SimpleMockData = {
   data: {
@@ -34,4 +50,7 @@ Simple.parameters = {
       }
     ]
   }
+}
+Simple.args = {
+  Label: "Test"
 }

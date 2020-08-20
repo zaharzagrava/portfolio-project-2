@@ -7,10 +7,11 @@ import { Card } from '@material-ui/core';
 export default {
   title: 'Components/ClientMain',
   component: ClientMain,
-  excludeStories: /.*Data$/
+  excludeStories: /.*Data$/,
+  decorators: [Story => <Card>{(Story())}</Card>]
 };
 
-const Template = (args) => <Card>  <ClientMain {...args} /> </Card>;
+const Template = (args) => <ClientMain {...args} />;
 
 export const Simple = Template.bind({});
 export const SimpleMockData = {

@@ -6,7 +6,7 @@ import { useQuery, gql } from '@apollo/client';
 
 import { ClientActionCreators } from '../../redux/client'
 
-import { CardContent, Typography } from '@material-ui/core';
+import { CardContent, Typography, Button } from '@material-ui/core';
 import ContentSkeleton from '../ContentSkeleton/ContentSkeleton';
 
 import WebIcon from '@material-ui/icons/Web';
@@ -24,7 +24,7 @@ export const GET_CLIENT_INFO = gql`
   }
 `;
 
-function ClientContacts() {
+function ClientContacts(props) {
   const [isDataLoading, setIsDataLoading] = useState(true)
   const dispatch = useDispatch()
 
@@ -42,9 +42,15 @@ function ClientContacts() {
   if (isDataLoading) return <div className={styles.admin}><ContentSkeleton linesNumber={4}  /></div>;
   if (error) return <p>Error :(</p>;
 
+  function Login(event) {
+    console.log("Logging")
+    props.onLogin({stuff: "See? Pass any stuff you want."});
+  }
 
   return (
     <>
+      <Button onClick={Login}>{props.content}</Button>
+
       <CardContent>
         <Typography variant="h5" component="h1" gutterBottom >
           Contacts

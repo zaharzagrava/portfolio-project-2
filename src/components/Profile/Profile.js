@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Button, Typography, Card, CardActions, CardContent} from '@material-ui/core'
+import { Card } from '@material-ui/core'
 
 import styles from './Profile.module.scss'
 

@@ -30,7 +30,12 @@ const withReduxSettings = {
 
 const withReduxDecorator = withRedux(addons)(withReduxSettings)
 
+// Importing @storybook/addon-viewport
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
+
+// Importing & Setting up @storybook/addon-console
+import { withConsole } from "@storybook/addon-console"
+const withConsoleDecorator = (storyFn, context) => withConsole()(storyFn)(context);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -44,5 +49,6 @@ export const parameters = {
 
 export const decorators = [
   withReduxDecorator,
-  withApolloClient
+  withApolloClient,
+  withConsoleDecorator
 ]

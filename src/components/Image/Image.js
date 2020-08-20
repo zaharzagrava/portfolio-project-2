@@ -2,7 +2,7 @@ import React from 'react'
 
 function Image({src, height, width}) {
   return (
-    <img src={src} height={height} width={width}/>
+    <img alt="TODO" src={src} height={height} width={width}/>
   )
 }
 
