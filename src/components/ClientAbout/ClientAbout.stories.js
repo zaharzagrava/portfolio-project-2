@@ -1,28 +1,23 @@
 import React from 'react';
-import ClientMain, { GET_CLIENT_INFO } from './ClientMain';
+import ClientAbout, { GET_CLIENT_INFO } from './ClientAbout';
 
 import { Card } from '@material-ui/core';
 
 // --- Stories
 export default {
-  title: 'Components/ClientMain',
-  component: ClientMain,
+  title: 'Components/ClientAbout',
+  component: ClientAbout,
   excludeStories: /.*Data$/
 };
 
-const Template = (args) => <Card>  <ClientMain {...args} /> </Card>;
+const Template = (args) => <Card>  <ClientAbout {...args} /> </Card>;
 
 export const Simple = Template.bind({});
 export const SimpleMockData = {
   data: {
     client: {
-      fullName: "John Smith",
-      jobTitle: "Front-end developer",
       residence: "San Francisco, SA",
       company: "ThatCoolCompany",
-      avatarImage: {
-        url: "https://media.graphcms.com/fSDwxKolRXOOMCICXPG7"
-      },
       id: "ckdygzpe81ot50105am107zfx"
     }
   }

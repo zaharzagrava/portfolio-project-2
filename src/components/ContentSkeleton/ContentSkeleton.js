@@ -1,16 +1,16 @@
 import React from 'react'
 import ContentLoader from "react-content-loader";
 
-function ContentSkeleton() {
-  const lines = Array.from(Array(15).keys())
+function ContentSkeleton({ linesNumber }) {
+  const lines = Array.from(Array(linesNumber).keys())
   return (
     <>
-      <ContentLoader height="700">
+      <ContentLoader height={linesNumber * 40} width="350">
       {lines.map((index) => {
         return (
         <>
-          <circle key={index} cx="10" cy={20+((index+1)*30)} r="8" /> 
-          <rect key={"_" + index} x="25" y={15+((index+1)*30)} rx="5" ry="5" width="250" height="10" /> 
+          <circle key={index} cx="70" cy={20+((index+1)*30)} r="8" /> 
+          <rect key={"_" + index} x="85" y={15+((index+1)*30)} rx="5" ry="5" width="250" height="10" /> 
         </>
         )
       })}

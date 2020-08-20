@@ -1,29 +1,24 @@
 import React, {useState} from 'react'
-import styles from './ClientMain.module.scss'
+import styles from './ClientSkills.module.scss'
 
 import { useSelector, useDispatch } from "react-redux";
 import { useQuery, gql } from '@apollo/client';
 
 import { ClientActionCreators } from '../../redux/client'
 
-import { CardContent, CardActions, Typography, Button } from '@material-ui/core';
+import { CardContent, Typography } from '@material-ui/core';
 import ContentSkeleton from '../ContentSkeleton/ContentSkeleton';
-import Image from "../Image/Image";
 
 export const GET_CLIENT_INFO = gql`
   {
     client(where: {id: "ckdygzpe81ot50105am107zfx"}) {
-      avatarImage {
-        url
-      }
-      fullName
-      jobTitle
+      skills
       id
     }
   }
 `;
 
-function ClientMain() {
+function ClientSkills() {
   const [isDataLoading, setIsDataLoading] = useState(true)
   const dispatch = useDispatch()
 
@@ -38,7 +33,7 @@ function ClientMain() {
     return loading ? null : state.client.byIds["ckdygzpe81ot50105am107zfx"]
   })
 
-  if (isDataLoading) return <div className={styles.admin}><ContentSkeleton  linesNumber={7}  /></div>;
+  if (isDataLoading) return <div className={styles.admin}><ContentSkeleton linesNumber={4} /></div>;
   if (error) return <p>Error :(</p>;
 
   return (
@@ -47,26 +42,16 @@ function ClientMain() {
         <Typography variant="h5" component="h1" gutterBottom >
           Profile Details
         </Typography>
-        <div className={styles.center}>
-          <Image src={client.avatarImage.url} width={"128px"} height={"128px"} />
+        <div className={styles.tag_container}>
+          {client.skills.map((item, index) => {
+            return (
+              <Typography key={index} className={styles.tag} variant="body2" gutterBottom>{item}</Typography>
+            )
+          })}
         </div>
-        <Typography variant="body1" gutterBottom>
-          Full Name: {client.fullName}
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Job Title: {client.jobTitle}
-        </Typography>
       </CardContent>
-      <CardActions>
-          <Button variant="contained" size="small" color="primary">
-            Follow
-          </Button>
-          <Button variant="contained" size="small" color="secondary">
-            Message
-          </Button>
-      </CardActions>
     </>
   )
 }
 
-export default ClientMain
+export default ClientSkills

@@ -1,15 +1,15 @@
-.profile {
+.client_data_column {
   display: grid;
   place-items: center center;
+  grid-gap: 20px;
   margin: 30px;
 }
 
-.profile_card {
+.client_data_column_card {
   min-width: 400px;
   max-width: 600px;
-  margin: 20px;
 }
 
-.profile_card_content {
+.client_data_column_card_content {
   text-align: center;
 }

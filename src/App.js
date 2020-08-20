@@ -3,10 +3,9 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 
 import Admin from './components/Admin/Admin'
+import Profile from './components/Profile/Profile'
 import Register from './components/Register/Register';
-import ClientMain from './components/ClientMain/ClientMain';
 
-import { Card } from "@material-ui/core";
 
 function App() {
   return (
@@ -14,10 +13,10 @@ function App() {
 
       <Switch>
         <Route exact path={["/"]}>
-          <Register />
+          <Admin />
         </Route>
         <Route exact path={["/admin"]}>
-        <Card>  <ClientMain  /> </Card>
+          <Admin />
         </Route>
       </Switch>
     </>

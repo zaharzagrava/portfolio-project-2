@@ -4,6 +4,11 @@ import {Button, Typography, Card, CardActions, CardContent} from '@material-ui/c
 
 import styles from './Profile.module.scss'
 
+import ClientAbout from "../ClientAbout/ClientAbout";
+import ClientContacts from "../ClientContacts/ClientContacts";
+import ClientMain from "../ClientMain/ClientMain";
+import ClientSkills from "../ClientSkills/ClientSkills";
+
 function Profile() {
 
   return (
@@ -14,20 +19,20 @@ function Profile() {
 
       {/* <SectionPath /> */}
 
-      {/* <div className={styles.profile_column}>
-        <Card>
+      <div className={styles.client_data_column}>
+        <Card className={styles.client_data_column_card}>
           <ClientMain />
         </Card>
-        <Card>
+        <Card className={styles.client_data_column_card}>
           <ClientSkills />
         </Card>
-        <Card>
+        <Card className={styles.client_data_column_card}>
           <ClientAbout />
         </Card>
-        <Card>
+        <Card className={styles.client_data_column_card}> 
           <ClientContacts />
         </Card>
-      </div> */}
+      </div>
 
       {/* <div className={styles.business_state_column}>
 
